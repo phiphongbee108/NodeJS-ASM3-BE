@@ -21,18 +21,19 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 dotenv.config();
 app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "http://localhost:3002",
-      "http://localhost:3003",
-      "http://localhost:3004",
-      "http://localhost:3005",
-    ],
-    methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
-    credentials: true,
-  })
+//   cors({
+//     origin: [
+//       "http://localhost:3000",
+//       "http://localhost:3001",
+//       "http://localhost:3002",
+//       "http://localhost:3003",
+//       "http://localhost:3004",
+//       "http://localhost:3005",
+//     ],
+//     methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
+//     credentials: true,
+//   })
+  cors()
 );
 
 app.use(bodyParser.urlencoded({ extended: false }));
