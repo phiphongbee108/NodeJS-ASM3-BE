@@ -4,8 +4,7 @@ const router = express.Router();
 
 router.post("/singup", authController.register);
 
-router.post("/singing", authController.singIn);
-
-module.exports = router;
-
+router.post("/signin", authController.singIn);
+router.post("/logout", authController.postLogout);
+router.post("/logingadmin", authController.singInAdmin);
 module.exports = router;

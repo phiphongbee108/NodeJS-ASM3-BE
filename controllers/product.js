@@ -1,4 +1,4 @@
-const Product = require("../models/product");
+const Product = require("../models/Product");
 
 exports.getProducts = async (req, res, next) => {
   try {
@@ -31,6 +31,7 @@ exports.addProduct = async (req, res, next) => {
 exports.deleteProduct = async (req, res, next) => {
   try {
     const query = req.query.p;
+
     await Product.findByIdAndDelete(query);
 
     res.json("Delete Thanh Cong");
