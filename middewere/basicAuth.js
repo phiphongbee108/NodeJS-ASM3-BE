@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/user");
 exports.basicAuth = async (req, res, next) => {
   try {
     //const id = req.params.id;
