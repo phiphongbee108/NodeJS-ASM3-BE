@@ -39,9 +39,9 @@ exports.singIn = async (req, res, next) => {
       bcrypt.compare(password, user.password).then((doMatch) => {
         if (doMatch) {
           req.session.isLoggedIn = true;
-          const cookie = req.session;
-
-          const data = { user: user, sesesion: cookie };
+          // req.session.user = user;
+          const ss = req.session;
+          const data = { user: user, sesesion: ss };
           return res.status(200).json(data);
         }
       });
@@ -60,7 +60,6 @@ exports.singInAdmin = async (req, res, next) => {
   try {
     const email = req.body.email;
     const password = req.body.password;
-    console.log("ok");
     User.findOne({ email: email, role: "admin" }).then((user) => {
       if (!user) {
         return res.status(201).json("false");
